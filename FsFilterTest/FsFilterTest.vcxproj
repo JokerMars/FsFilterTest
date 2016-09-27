@@ -35,9 +35,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Tools.c" />
+    <ClCompile Include="UserInterface.c" />
     <ResourceCompile Include="FsFilterTest.rc" />
     <ClCompile Include="FsFilterTest.c" />
-    <Inf Include="FsFilterTest.inf" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{85051C7D-839C-407A-9328-81792D86CB10}</ProjectGuid>
@@ -179,6 +180,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <FilesToPackage Include="$(TargetPath)" />
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include="FsFilterTest.inf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileEncrypt.h" />
+    <ClInclude Include="Tools.h" />
+    <ClInclude Include="UserInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -7,6 +7,8 @@ Module Name:
 Abstract:
 
     This is the main module of the FsFilterTest miniFilter driver.
+	Test version for file transparent encrypt. It's just a scratch not the final
+	version
 
 Environment:
 
