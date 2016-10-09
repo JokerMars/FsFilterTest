@@ -24,17 +24,17 @@
 typedef struct _PROCESS_INFO
 {
 	CHAR processName[PROCESS_NAME_LEN];
-	_PROCESS_INFO *next;
+	struct _PROCESS_INFO *next;
 }PROCESS_INFO, *PPROCESS_INFO;
 
 
 //define the structure of file type keyword list
-#define TYPE_KEY_WORD_LEN		32
+#define TYPE_KEY_WORD_LEN		32 
 typedef struct _TYPE_KEY_WORD
 {
 	CHAR keyWord[TYPE_KEY_WORD_LEN];//FILE TYPE
 	PPROCESS_INFO processInfo;// the matched processes
-	_TYPE_KEY_WORD *next;
+	struct _TYPE_KEY_WORD *next;
 }TYPE_KEY_WORD, *PTYPE_KEY_WORD;
 
 ///

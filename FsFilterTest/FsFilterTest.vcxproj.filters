@@ -35,11 +35,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Inf Include="FsFilterTest.inf">
-      <Filter>Driver Files</Filter>
-    </Inf>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="UserInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>

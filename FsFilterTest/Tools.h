@@ -18,7 +18,7 @@ VOID FreeStrategy(PTYPE_KEY_WORD head);
 
 
 //check the file type, see if it's in keyword list.
-BOOLEAN IsInKeyWordList(_In_ PTYPE_KEY_WORD keyWord, _In_ UNICODE_STRING fileName, _Out_ PTYPE_KEY_WORD *out_keyWord);
+BOOLEAN IsInKeyWordList(_In_ PTYPE_KEY_WORD keyWord, _In_ PUNICODE_STRING fileName, _Out_ PTYPE_KEY_WORD *out_keyWord);
 
 //check if the process is the confidential process
 BOOLEAN IsSecretProcess(PTYPE_KEY_WORD keyWord, CHAR *processName);
@@ -31,7 +31,7 @@ NTSTATUS GetFileEncryptInfoToCtx(_Inout_ PFLT_CALLBACK_DATA data, _In_ PCFLT_REL
 	_Inout_ PSTREAM_HANDLE_CONTEXT ctx, _In_ PTYPE_KEY_WORD keyWord);
 
 /*******Encrypt file******/
-NTSTATUS EncryptFile(_Inout_ PFLT_CALLBACK_DATA data, PCFLT_RELATED_OBJECTS FltObjects, _In_ PCHAR key);
+NTSTATUS EncryptFile(_Inout_ PFLT_CALLBACK_DATA data, _In_ PCFLT_RELATED_OBJECTS FltObjects, _In_ PCHAR key);
 
 NTSTATUS PutEncryptHead(_Inout_ PFLT_CALLBACK_DATA data, _In_ PCFLT_RELATED_OBJECTS FltObjects);
 
@@ -67,6 +67,10 @@ ULONG GetProcessNameOffset(VOID);
 PCHAR GetCurrentProcessName(ULONG ProcessNameOffset);
 
 
+/*deal with the string*/
 
+void wstr2cstr(const wchar_t *pwstr, char *pcstr, size_t len);
+
+void cstr2wstr(const char *pcstr, wchar_t *pwstr, size_t len);
 
 #endif
